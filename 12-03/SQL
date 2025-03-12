@@ -1,28 +1,3 @@
-**BRMW:**
-CREATE TABLE Conta 
-( 
- Saldo INT,  
- Numero INT PRIMARY KEY,  
-); 
-
-CREATE TABLE Cliente 
-( 
- Nome INT,  
- ID Cliente INT PRIMARY KEY,  
- Rua INT,  
- Cidade INT,  
-); 
-
-CREATE TABLE Conta-cliente 
-( 
- ID Cliente INT PRIMARY KEY,  
- Numero INT PRIMARY KEY,  
-); 
-
-ALTER TABLE Conta-cliente ADD FOREIGN KEY(ID Cliente) REFERENCES Cliente (ID Cliente)
-ALTER TABLE Conta-cliente ADD FOREIGN KEY(Numero) REFERENCES Conta (Numero)
-
-**Corrigido****************************************************************************
 CREATE TABLE Conta 
 ( 
  Saldo INT,  
