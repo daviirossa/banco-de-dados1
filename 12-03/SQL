@@ -1,0 +1,47 @@
+**BRMW:**
+CREATE TABLE Conta 
+( 
+ Saldo INT,  
+ Numero INT PRIMARY KEY,  
+); 
+
+CREATE TABLE Cliente 
+( 
+ Nome INT,  
+ ID Cliente INT PRIMARY KEY,  
+ Rua INT,  
+ Cidade INT,  
+); 
+
+CREATE TABLE Conta-cliente 
+( 
+ ID Cliente INT PRIMARY KEY,  
+ Numero INT PRIMARY KEY,  
+); 
+
+ALTER TABLE Conta-cliente ADD FOREIGN KEY(ID Cliente) REFERENCES Cliente (ID Cliente)
+ALTER TABLE Conta-cliente ADD FOREIGN KEY(Numero) REFERENCES Conta (Numero)
+
+**Corrigido****************************************************************************
+CREATE TABLE Conta 
+( 
+ Saldo INT,  
+ Numero INT PRIMARY KEY  
+); 
+
+CREATE TABLE Cliente 
+( 
+ Nome VARCHAR(255),  
+ ID_Cliente INT PRIMARY KEY,  
+ Rua VARCHAR(255),  
+ Cidade VARCHAR(255)  
+); 
+
+CREATE TABLE Conta_cliente 
+( 
+ ID_Cliente INT,  
+ Numero INT,  
+ PRIMARY KEY (ID_Cliente, Numero),  
+ FOREIGN KEY (ID_Cliente) REFERENCES Cliente (ID_Cliente),  
+ FOREIGN KEY (Numero) REFERENCES Conta (Numero)  
+); 
